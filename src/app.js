@@ -42,7 +42,6 @@ getIceObject(iceConfig => {
 
   peer.on('call', call => {
     openStream(stream => {
-      console.log('123456');
       playVideo(stream, 'localStream');
       call.answer(stream);
       call.on('stream', remoteStream => playVideo(remoteStream,'friendStream'));
